@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💘</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #non {
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Veux-tu être ma Valentine ? 💝</h2>
+
+  <button onclick="oui()">Oui</button>
+  <button id="non" onmouseover="bougerNon()">Non</button>
+
+  <div id="message"></div>
+
+  <script>
+    function oui() {
+      document.getElementById("message").innerHTML =
+        "yes 😍 je n’aurais pas à retourner ton cadeau";
+    }
+
+    function bougerNon() {
+      const bouton = document.getElementById("non");
+
+      const largeur = window.innerWidth - bouton.offsetWidth;
+      const hauteur = window.innerHeight - bouton.offsetHeight;
+
+      const x = Math.random() * largeur;
+      const y = Math.random() * hauteur;
+
+      bouton.style.left = x + "px";
+      bouton.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
